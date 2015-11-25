@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>northwind.php</Name>
+    <ProjectGuid>14f9cb03-35f1-4b08-a43a-1590c1bf87af</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>northwind.php</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>northwind.php</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config\configuration.default.php" />
+    <Compile Include="config\configuration.php" />
+    <Compile Include="contactus.php" />
+    <Compile Include="contactussend.php" />
+    <Compile Include="customers\customersearch.php" />
+    <Compile Include="customers\customersearchresult.php" />
+    <Compile Include="includes\footer.php" />
+    <Compile Include="includes\header.php" />
+    <Compile Include="includes\header_nav.php" />
+    <Compile Include="index.php" />
+    <Compile Include="prepared\executenonquery.php" />
+    <Compile Include="prepared\preparedstatements.php" />
+    <Compile Include="store\colour-chooser.php" />
+    <Compile Include="store\productorder.php" />
+    <Compile Include="store\productsearch.php" />
+    <Compile Include="store\productsearchresult.php" />
+    <Compile Include="store\shoppingcart.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\" />
+    <Folder Include="config\" />
+    <Folder Include="css\" />
+    <Folder Include="customers\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="images\unsplash\" />
+    <Folder Include="includes\" />
+    <Folder Include="js\" />
+    <Folder Include="prepared\" />
+    <Folder Include="store\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap.northwind.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="images\unsplash\northernlights.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="LICENSE.md" />
+    <Content Include="README.md" />
+  </ItemGroup>
+</Project>
