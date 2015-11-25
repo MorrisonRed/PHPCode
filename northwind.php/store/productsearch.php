@@ -37,37 +37,39 @@ $pageTitle = 'Search for Products';
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="well">
-                    <form action="productsearchresult.php" method="post">
-                    <table cellpadding="6">
-                        <tbody>
-                            <tr>
-                                <td><label style="padding-right:15px;">Product Name:</label></td>
-                                <td>
-                                    <input type="text" name="productname" id="productname" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <br />
-                                    <input type="submit" name="search" value="Search for product" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </form>
+    <div id="content_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <form action="productsearchresult.php" method="post">
+                            <table cellpadding="6">
+                                <tbody>
+                                    <tr>
+                                        <td><label style="padding-right:15px;">Product Name:</label></td>
+                                        <td>
+                                            <input type="text" class="form-control" name="productname" id="productname" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <br />
+                                            <input type="submit" class="btn btn-default" name="search" value="Search for product" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-6">
-                <div class="well">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                    officia deserunt mollitia animi.
+                <div class="col-sm-6">
+                    <div class="well">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                        officia deserunt mollitia animi.
+                    </div>
                 </div>
             </div>
         </div>

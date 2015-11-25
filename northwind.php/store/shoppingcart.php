@@ -38,11 +38,12 @@ $pageTitle = 'View Cart';
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="well">
-                    <?php
+    <div id="content_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <?php
                     if(!isset($_SESSION["shoppingcart"]))
                     {
                         echo "
@@ -58,9 +59,7 @@ $pageTitle = 'View Cart';
                                 <a href='shoppingcart.php' style='padding-right:10px;' target='_parent'>View Cart</a>
                                 <a href='productsearch.php' style='padding-right:10px;' target='_parent'>Search for another product</a>
                             </p>
-                                
                             You have order these books: <br />";
-
                         $shoppingCart = split("/", $_SESSION["shoppingcart"]);
                         foreach($shoppingCart as $prodid)
                         {
@@ -69,16 +68,17 @@ $pageTitle = 'View Cart';
                                 echo "productId = ".$prodid . "<br />";
                         }
                     }
-                    ?>
+                        ?>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-6">
-                <div class="well">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                    officia deserunt mollitia animi.
+                <div class="col-sm-6">
+                    <div class="well">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                        officia deserunt mollitia animi.
+                    </div>
                 </div>
             </div>
         </div>

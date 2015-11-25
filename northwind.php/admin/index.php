@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <?php
-session_start();
-$pageTitle = 'Product Ordered';  
+$pageTitle = 'NorthWind Admin Site';
+include $_SERVER['DOCUMENT_ROOT']."/config/configuration.php";
 ?>
-
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,13 +14,13 @@ $pageTitle = 'Product Ordered';
         if(isset($pageTitle))
             echo $pageTitle;
         else
-            echo 'Welcome To The NorthWind Store!';
+            echo 'NorthWind Admin Site';
         ?>
     </title>
 
     <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700|Courgette' rel='stylesheet' type='text/css'>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700|Courgette' rel='stylesheet' type='text/css' />
     <link href="/css/bootstrap.northwind.css" rel="stylesheet" />
 
 
@@ -34,35 +33,31 @@ $pageTitle = 'Product Ordered';
 </head>
 <body>
     <!--HEADER NAVIGATION-->
-    <?php include '../includes/header_nav.php';?>
+    <?php include '../includes/header_nav_admin.php';?>
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
     <div id="content_wrapper">
         <div class="container">
             <div class="row">
-                <?php
-                // Get the product title that was ordered fromt he url
-            $productToOrder = urldecode($_GET['productid']);
-            //check session for saved products
-            if(!isset($_SESSION['shoppingcart']))
-                $shoppingCart = "";
-            else
-                $shoppingCart = $_SESSION['shoppingcart'];
-            //list the products
-            $shoppingCart = $shoppingCart . "/" . $productToOrder;
-            $_SESSION["shoppingcart"] = $shoppingCart;
-            echo "
                 <div class='col-sm-6'>
                     <div class='well'>
-                        <p>
-                            <a href='shoppingcart.php' style='padding-right:10px;' target='_parent'>View Cart</a>
-                            <a href='productsearch.php' style='padding-right:10px;' target='_parent'>Search for another product</a>
-                        </p>
-                        Thankyou.  $productToOrder has been added to you cart.
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/admin/categories.php">Categories</a>
+                            </li>
+                            <li>
+                                <a href="/store/shoppingcart.php">Option 2</a>
+                            </li>
+                            <li>
+                                <a href="/store/colour-chooser.php">Option 3</a>
+                            </li>
+                            <li>
+                                <a href="/store/contactus.php">Option 4</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>";
-                ?>
+                </div>
 
                 <div class="col-sm-6">
                     <div class="well">

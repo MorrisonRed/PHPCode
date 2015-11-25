@@ -49,67 +49,69 @@ if (isset($_GET['colourchosen'])){
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
-    <div class="container">
-        <div class="row">
-            <?php
-            if(isset($_GET['colourchosen'])){ 
+    <div id="content_wrapper">
+        <div class="container">
+            <div class="row">
+                <?php
+            if(isset($_GET['colourchosen'])){
                 //This is the post back message
-            ?>
-            <div class="col-sm-6">
-                <div class='well'>
-                    Your colour preference has been recorded <br />
-                    echo "You have selected colour = <?php echo $_GET['colourchosen']; ?>
-                    <br /><br />
-                    <a href='/index.php'>Return to home page</a>
+                ?>
+                <div class="col-sm-6">
+                    <div class='well'>
+                        Your colour preference has been recorded <br />
+                        echo "You have selected colour = <?php echo $_GET['colourchosen']; ?>
+                        <br /><br />
+                        <a href='/index.php'>Return to home page</a>
+                    </div>
                 </div>
-            </div>
-            <?php
+                <?php
             }
             else{
             //Not a postback, so present the colour selection form
-            ?>
-            <div class="col-sm-6">
-                <div class="well">
-                    <form action="colour-chooser.php" method="get">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Choose your colour:
-                                    </td>
-                                    <td>
-                                        <select sise="1" name="colourchosen">
-                                            <?php
+                ?>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <form action="colour-chooser.php" method="get">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Choose your colour:
+                                        </td>
+                                        <td>
+                                            <select sise="1" name="colourchosen">
+                                                <?php
                                                 //Populate the drop-down from the array
                                                 foreach($colours as $name => $hex)
                                                 {
                                                     echo "<option>" . $name;
                                                 }
-                                            ?>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <br />
-                                        <input type="submit" name="Confirm" value="Confirm Preference" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
+                                                ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <br />
+                                            <input type="submit" name="Confirm" value="Confirm Preference" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <?php
+                <?php
             }
-            ?>
+                ?>
 
-            <div class="col-sm-6">
-                <div class="well">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                    officia deserunt mollitia animi.
+                <div class="col-sm-6">
+                    <div class="well">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                        officia deserunt mollitia animi.
+                    </div>
                 </div>
             </div>
         </div>

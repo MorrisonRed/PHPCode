@@ -16,14 +16,20 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="admin\categories.php" />
+    <Compile Include="admin\categoryedit.php" />
+    <Compile Include="admin\template.php" />
+    <Compile Include="admin\index.php" />
     <Compile Include="config\configuration.default.php" />
     <Compile Include="config\configuration.php" />
     <Compile Include="contactus.php" />
     <Compile Include="contactussend.php" />
     <Compile Include="customers\customersearch.php" />
     <Compile Include="customers\customersearchresult.php" />
+    <Compile Include="includes\Common_UI_Controls.php" />
     <Compile Include="includes\footer.php" />
     <Compile Include="includes\header.php" />
+    <Compile Include="includes\header_nav_admin.php" />
     <Compile Include="includes\header_nav.php" />
     <Compile Include="index.php" />
     <Compile Include="prepared\executenonquery.php" />
@@ -64,6 +70,7 @@
     <Content Include="images\unsplash\northernlights.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\common_ui_controls.js" />
     <Content Include="js\html5shiv.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="js\respond.min.js" />
