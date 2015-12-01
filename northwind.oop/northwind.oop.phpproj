@@ -35,6 +35,7 @@
     <Compile Include="Classes\Validator\InArray.php" />
     <Compile Include="Classes\Validator\StringLength.php" />
     <Compile Include="Classes\View\View.php" />
+    <Compile Include="Config\config.default.php" />
     <Compile Include="Config\config.php" />
     <Compile Include="Config\configuration.default.php" />
     <Compile Include="Config\configuration.php" />
