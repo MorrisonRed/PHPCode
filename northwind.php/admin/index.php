@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT']."/config/configuration.php";
     <div class="container">
         <ul class="breadcrumb">
             <li class="active"><a href="/admin">Administration</a></li>
-            <li><a href="/store">Go To Store</a></li>
+            <li><a href="/">Go To Store</a></li>
         </ul>
     </div>
 
