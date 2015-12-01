@@ -24,17 +24,40 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="config\configuration.default.php" />
-    <Compile Include="config\configuration.php" />
+    <Compile Include="Classes\Form\Form.php" />
+    <Compile Include="Classes\Form\Inputs\Checkbox.php" />
+    <Compile Include="Classes\Form\Inputs\Option.php" />
+    <Compile Include="Classes\Form\Inputs\Select.php" />
+    <Compile Include="Classes\Form\Inputs\Submit.php" />
+    <Compile Include="Classes\Form\Inputs\Text.php" />
+    <Compile Include="Classes\Validator\Boolean.php" />
+    <Compile Include="Classes\Validator\Email.php" />
+    <Compile Include="Classes\Validator\InArray.php" />
+    <Compile Include="Classes\Validator\StringLength.php" />
+    <Compile Include="Classes\View\View.php" />
+    <Compile Include="Config\config.php" />
+    <Compile Include="Config\configuration.default.php" />
+    <Compile Include="Config\configuration.php" />
+    <Compile Include="Controllers\AppController.php" />
     <Compile Include="includes\Common_UI_Controls.php" />
     <Compile Include="includes\footer.php" />
     <Compile Include="includes\header.php" />
     <Compile Include="includes\header_nav.php" />
     <Compile Include="includes\header_nav_admin.php" />
+    <Compile Include="home.php" />
     <Compile Include="index.php" />
+    <Compile Include="Layouts\layout.php" />
+    <Compile Include="Layouts\register.php" />
+    <Compile Include="Layouts\thanks.php" />
+    <Compile Include="Classes\ObjectFactoryService.php" />
+    <Compile Include="Classes\Session.php" />
+    <Compile Include="Classes\Model\Model.php" />
+    <Compile Include="test.php" />
+    <Compile Include="test2.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="composer.json" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -58,12 +81,20 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="config\" />
+    <Folder Include="Classes\Form\" />
+    <Folder Include="Classes\Form\Inputs\" />
+    <Folder Include="Classes\Validator\" />
+    <Folder Include="Classes\View\" />
+    <Folder Include="Config\" />
     <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
     <Folder Include="images\unsplash\" />
     <Folder Include="includes\" />
     <Folder Include="js\" />
+    <Folder Include="Layouts\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Classes\Model\" />
   </ItemGroup>
 </Project>

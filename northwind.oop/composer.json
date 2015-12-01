@@ -1,0 +1,26 @@
+{
+  "name": "PHPCode/Northwind",
+  "description": "PHP Code Application Library",
+  "version": "0.0.1",
+  "type": "library",
+  "keywords": [ "php", "developement" ],
+  "homepage": "http://morrisonred.com",
+  "time": "2015-11-26",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ian Morrison",
+      "email": "ian.morrison@morrisonred.com",
+      "homepage": "http://morrisonred.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "lib/",
+      "froms": "lib/",
+	  "SimpleFactoryDesign": "lib/"
+    },
+    "files": [ "config/configuration.php" ]
+  }
+}
