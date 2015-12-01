@@ -1,4 +1,7 @@
 <?php
+$AlertMessages = [];
+$ErrorMessages = [];
+$DebugMessages = [];
 
 /**
  * Returns Standard Bootstrap Alert Box

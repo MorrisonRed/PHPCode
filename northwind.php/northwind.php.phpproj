@@ -17,6 +17,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="admin\categories.php" />
+    <Compile Include="admin\categoryadd.php" />
+    <Compile Include="admin\categorydelete.php" />
     <Compile Include="admin\categoryedit.php" />
     <Compile Include="admin\template.php" />
     <Compile Include="admin\index.php" />

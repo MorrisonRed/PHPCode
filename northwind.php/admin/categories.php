@@ -42,23 +42,52 @@ $errorMessage = "";
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/admin">Admin</a></li>
+            <li class="active">Categories</li>
+        </ul>
+    </div>
+
     <div id="content_wrapper">
         <div class="container">
             <div class="row">
-                <div class='col-sm-8'>
+                <div class='col-sm-12'>
                     <div class='well'>
+                        <?php
+                        if(isset($AlertMessages) && count($AlertMessages) > 0){
+                            $result = '';
+                            foreach($AlertMessages as $message){
+                                $result .= $message . "<br />";
+                            }
+                            echo AlertMsg($result);
+                            $AlertMessages = [];
+                        }
+
+                        if($debug){
+                            if(isset($DebugMessages) && count($DebugMessages) > 0){
+                                $result = '';
+                                foreach($DebugMessages as $message){
+                                    $result .= $message . "<br />";
+                                }
+                                echo DebugMsg($result);
+                                $DebugMessages = [];
+                            }
+                        }
+                        ?>
                         <form id="formSearch" name="formSearch" action="categories.php" method="post">
-                            <table>
+                            <table style="">
                                 <tbody>
                                     <tr>
-                                        <td class="col-md-2">
+                                        <td class="col-md-1">
                                             <label style="padding-right:15px;">Name:</label>
                                         </td>
-                                        <td class="col-md-7">
+                                        <td class="">
                                             <input type="text" class="form-control" name="categoryName" id="categoryName" autocomplete="off" autofocus value="<?php echo $searchForCategory; ?>" />
                                         </td>
                                         <td class="col-md-3">
-                                            <input type="submit" class="btn btn-default" name="searchForCategory" value="Search for Category" />
+                                            <input type="submit" class="btn btn-default" name="searchForCategory" value="Search" />
+                                            <a href="categoryadd.php" class="btn btn-default" name="addCategory" id="addCategory">Add</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -77,8 +106,7 @@ $errorMessage = "";
                         }
                         catch(PDOException $e)
                         {
-                            echo AlertMsg($e->getMessage());
-                            exit;
+                            array_push($AlertMessages, $e->getMessage());
                         }
 
                         try{
@@ -86,10 +114,10 @@ $errorMessage = "";
                             $query = $db->prepare("SELECT * FROM Categories WHERE CategoryName like ? ORDER BY CategoryName ASC");
                                 
                             #DEBUG CODE DISPLAY
-                            if($debug)
-                            {
-                                echo DebugMsg("RUNNING QUERY " . $query->queryString);
-                            }    
+                            if($debug){
+                                array_push($DebugMessages, $query->queryString);
+                            }
+
                             $query->execute(array("%$searchValue%"));
 
                             # Get Row Count -- Only works in MySQL
@@ -99,7 +127,7 @@ $errorMessage = "";
                                 <table class='table table-striped'>
                                     <thead>
                                         <tr>
-                                            <td class='col-md-1'></td>
+                                            <td class='col-md-2'></td>
                                             <td>Name</td>
                                             <td>Description</td>
                                             <td class='col-md-2'>Picture</td>
@@ -111,6 +139,7 @@ $errorMessage = "";
                             {
                                 echo "<tr>";
                                 echo "<td><a class='btn btn-default' href='categoryedit.php?catid=". urlencode($row["CategoryID"]) . "'>Edit</a>";
+                                echo "<a class='btn btn-default' data-bb=\"confirm\" onclick='return confirm(\"Want to delete?\");' href='categorydelete.php?catid=". urlencode($row["CategoryID"]) . "'>Delete</a></td>"; 
                                 echo "<td>" . htmlentities($row["CategoryName"]) . "</td>";
                                 echo "<td>" . htmlentities($row["Description"]) . "</td>";
                                 echo "<td><img class='img-thumbnail img-responsive' style='' alt='' src='" . Data_Uri($row["Picture"], "image/png") . "' /></td>";
@@ -126,20 +155,11 @@ $errorMessage = "";
                         }
                         catch(PDOException $e)
                         {
-                            echo AlertMsg($e->getMessage());
+                            array_push($AlertMessages, $e->getMessage());
                         }      
                         
                         echo SuccessMsg("We found " . $rowCount . " categories matching your search");
                         ?>                           
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="well">
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                        officia deserunt mollitia animi.
                     </div>
                 </div>
             </div>
@@ -156,12 +176,9 @@ $errorMessage = "";
 
     <script type="text/javascript">
         $(document).ready(function () {
-            //$('#categoryName').keydown(function (event) {
-            //    var keypressed = event.keyCode || event.which;
-            //    if (keypressed == 13) {
-            //        $(this).closest('formSearch').submit();
-            //    }
-            //});
+            bootbox.confirm("Are you sure?", function (result) {
+                //Example.show("Confirm result: " + result);
+            });
 
         });
     </script>

@@ -37,6 +37,13 @@ include $_SERVER['DOCUMENT_ROOT']."/config/configuration.php";
     <!--HEADER MENU-->
     <?php include '../includes/header.php';?>
 
+    <div class="container">
+        <ul class="breadcrumb">
+            <li class="active"><a href="/admin">Administration</a></li>
+            <li><a href="/store">Go To Store</a></li>
+        </ul>
+    </div>
+
     <div id="content_wrapper">
         <div class="container">
             <div class="row">
