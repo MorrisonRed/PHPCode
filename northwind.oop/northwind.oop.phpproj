@@ -24,6 +24,12 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\baseController.php" />
+    <Compile Include="app\baseModel.php" />
+    <Compile Include="app\load.php" />
+    <Compile Include="app\registry.php" />
+    <Compile Include="app\request.php" />
+    <Compile Include="app\router.php" />
     <Compile Include="Classes\Form\Form.php" />
     <Compile Include="Classes\Form\Inputs\Checkbox.php" />
     <Compile Include="Classes\Form\Inputs\Option.php" />
@@ -40,6 +46,8 @@
     <Compile Include="Config\configuration.default.php" />
     <Compile Include="Config\configuration.php" />
     <Compile Include="Controllers\AppController.php" />
+    <Compile Include="Controllers\errorController.php" />
+    <Compile Include="Controllers\indexController.php" />
     <Compile Include="includes\Common_UI_Controls.php" />
     <Compile Include="includes\footer.php" />
     <Compile Include="includes\header.php" />
@@ -47,17 +55,18 @@
     <Compile Include="includes\header_nav_admin.php" />
     <Compile Include="home.php" />
     <Compile Include="index.php" />
-    <Compile Include="Layouts\layout.php" />
-    <Compile Include="Layouts\register.php" />
-    <Compile Include="Layouts\thanks.php" />
     <Compile Include="Classes\ObjectFactoryService.php" />
     <Compile Include="Classes\Session.php" />
     <Compile Include="Classes\Model\Model.php" />
-    <Compile Include="test.php" />
-    <Compile Include="test2.php" />
+    <Compile Include="Models\indexModel.php" />
+    <Compile Include="Models\postModel.php" />
+    <Compile Include="Views\Index\indexView.php" />
+    <Compile Include="Views\Shared\Layout_Footer.php" />
+    <Compile Include="Views\Shared\Layout_Header.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include=".htaccess" />
     <Content Include="composer.json" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.css.map" />
@@ -80,6 +89,7 @@
     <Content Include="js\respond.min.js" />
     <Content Include="LICENSE.md" />
     <Content Include="README.md" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\Form\" />
@@ -93,9 +103,14 @@
     <Folder Include="images\unsplash\" />
     <Folder Include="includes\" />
     <Folder Include="js\" />
-    <Folder Include="Layouts\" />
     <Folder Include="Controllers\" />
     <Folder Include="Classes\" />
     <Folder Include="Classes\Model\" />
+    <Folder Include="Models\" />
+    <Folder Include="libs\" />
+    <Folder Include="app\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Index\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
 </Project>

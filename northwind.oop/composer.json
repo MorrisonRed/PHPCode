@@ -16,11 +16,9 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "": "lib/",
-      "froms": "lib/",
-	  "SimpleFactoryDesign": "lib/"
-    },
+	"psr-4": {
+	  "": ["app/", "Controllers/"]
+	},
     "files": [ "config/configuration.php" ]
   }
 }
