@@ -28,7 +28,36 @@
     <![endif]-->
 </head>
 <body>
-    <!--HEADER NAVIGATION-->
-    <?php include '/includes/header_nav.php';?>
-    <!--HEADER MENU-->
-    <?php include '/includes/header.php';?>
+<div class="navbar transparent navbar-inverse navbar-fixed-top hr">
+    <div class="navbar-brand-right">
+        
+    </div>
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/admin/" name="contactUs" id="contactUS" class="btn-button-transparent pull-right">Admin</a>
+            <a href="/contactus.php" name="contactUs" id="contactUS" class="btn-button-transparent pull-right">Contact Us</a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+                <a href="/" style="text-decoration:none;color:inherit;" target="_parent">
+                    <span style="font-family:Cinzel;">North</span>
+                    <span style="font-family:Courgette;margin-left:-12px;">Wind</span>
+                </a>
+                Demo Store
+            </h1>
+            <h3>
+                <?php
+                if(isset($pageTitle))
+                    echo $pageTitle;
+                else
+                    echo 'Welcome To The NorthWind Store!';
+                ?>
+            </h3>
+        </div>
+    </div>
+</header>

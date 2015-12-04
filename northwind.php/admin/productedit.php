@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$pageTitle = 'Edit Category';
+$pageTitle = 'Edit Product';
 include $_SERVER['DOCUMENT_ROOT']."/config/configuration.php";
 include $_SERVER['DOCUMENT_ROOT']."/includes/Common_UI_Controls.php";
 
@@ -15,30 +15,22 @@ catch(PDOException $e){
 
 //check for post back, if yes then update category
 if(isset($_POST['submit'])){
-    $categoryID = (int)$_POST['categoryid'];
-    $categoryName = htmlspecialchars($_POST['categoryname']);
-    $description = htmlspecialchars($_POST['description']);    
-    $picture = file_get_contents($_FILES['picture']['tmp_name']);
-    $picture_name = addslashes($_FILES['picture']['name']);
-    $picture_size = getimagesize($_FILES['picture']['tmp_name']);
+    $productID = (int)$_POST['prodid'];
+    $productName = htmlspecialchars($_POST['productname']);
+    $supplierID = htmlspecialchars($_POST['supplierid']);    
+    $categoryID = htmlspecialchars($_POST['categoryid']); 
+    $quantityPerUnit = htmlspecialchars($_POST['quantityperunit']); 
+    $unitPrice = htmlspecialchars($_POST['unitprice']); 
+    $unitsInStock = htmlspecialchars($_POST['unitsinstock']); 
+    $unitsOnOrder = htmlspecialchars($_POST['unitsOnOrder']); 
+    $reorderLevel = htmlspecialchars($_POST['reorderlevel']);
+    $discontinued = htmlspecialchars($_POST['discontinued']); 
 
     try{
-        //check if there is an uploaded image
-        if(!$picture_size == FALSE){
-            $stmt = $db->prepare("UPDATE Categories SET CategoryName=:categoryname, Description=:description, Picture=:picture WHERE CategoryID=:categoryid");
-            $stmt->bindParam(":categoryname", $categoryName);
-            $stmt->bindParam(":description", $description);
-            $stmt->bindParam(":picture", $picture);
-            $stmt->bindParam(":categoryid", $categoryID);
-            $stmt->execute(); 
-        }
-        else{
-            $stmt = $db->prepare("UPDATE Categories SET CategoryName=:categoryname, Description=:description WHERE CategoryID=:categoryid");
-            $stmt->bindParam(":categoryname", $categoryName);
-            $stmt->bindParam(":description", $description);
-            $stmt->bindParam(":categoryid", $categoryID);
-            $stmt->execute();
-        }
+        $stmt = $db->prepare("UPDATE Products SET ProductName=:productname WHERE ProductID=:productid");
+        $stmt->bindParam(":productname", $productName);
+        $stmt->bindParam(":productid", $productID);
+        $stmt->execute(); 
 
         //DEBUG WINDOW
         if($debug){
@@ -46,7 +38,7 @@ if(isset($_POST['submit'])){
         }
     }
     catch(PDOException $e){
-        array_push($AlertMessages, "Category $categoryID has been updated");
+        array_push($AlertMessages, "Product $productID has been updated");
     }
 }
 ?>
@@ -87,8 +79,8 @@ if(isset($_POST['submit'])){
     <div class="container">
          <ul class="breadcrumb">
               <li><a href="/admin">Admin</a></li>
-              <li><a href="/admin/categories.php">Categories</a></li>
-              <li class="active">Update Category</li>
+              <li><a href="/admin/categories.php">Products</a></li>
+              <li class="active">Update Product</li>
          </ul>
     </div>
 
@@ -124,8 +116,8 @@ if(isset($_POST['submit'])){
                         <?php
                         //load category
                         try{
-                            $stmt = $db->prepare("select * from Categories where CategoryId=:categoryid");
-                            $stmt->bindParam(":categoryid", $_GET['catid']);
+                            $stmt = $db->prepare("select * from Products where ProductID=:productid");
+                            $stmt->bindParam(":productid", $_GET['prodid']);
                             $stmt->execute();
                             $rowCount = $stmt->rowCount();
 

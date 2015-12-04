@@ -18,8 +18,20 @@ class indexController extends baseController{
         $this->load->model($model);
 
         //get data for view
-        $vars['pageTitle'] = 'Index';
+        $vars['pageTitle'] = 'Welcome to the NorthWind Store';
         $vars['posts'] = $this->$model->getEntries();
+
+        //load view
+        $this->load->view($model, $vars);
+    }
+    public function home(){
+        $model = 'home';
+        //load model into registry
+        $this->load->model($model);
+
+        //get data for view
+        $vars['pageTitle'] = 'Welcome to the NorthWind Store';
+        //$vars['posts'] = $this->$model->getEntries();
 
         //load view
         $this->load->view($model, $vars);

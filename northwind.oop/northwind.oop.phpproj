@@ -48,21 +48,20 @@
     <Compile Include="Controllers\AppController.php" />
     <Compile Include="Controllers\errorController.php" />
     <Compile Include="Controllers\indexController.php" />
+    <Compile Include="Controllers\storeController.php" />
     <Compile Include="includes\Common_UI_Controls.php" />
-    <Compile Include="includes\footer.php" />
-    <Compile Include="includes\header.php" />
-    <Compile Include="includes\header_nav.php" />
     <Compile Include="includes\header_nav_admin.php" />
-    <Compile Include="home.php" />
     <Compile Include="index.php" />
     <Compile Include="Classes\ObjectFactoryService.php" />
     <Compile Include="Classes\Session.php" />
     <Compile Include="Classes\Model\Model.php" />
     <Compile Include="Models\indexModel.php" />
     <Compile Include="Models\postModel.php" />
+    <Compile Include="Views\Index\homeView.php" />
     <Compile Include="Views\Index\indexView.php" />
     <Compile Include="Views\Shared\Layout_Footer.php" />
     <Compile Include="Views\Shared\Layout_Header.php" />
+    <Compile Include="Views\Store\indexView.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -111,6 +110,7 @@
     <Folder Include="app\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Index\" />
+    <Folder Include="Views\Store\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
 </Project>
